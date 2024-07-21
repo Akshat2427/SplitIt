@@ -1,0 +1,9 @@
+.card-service:hover {
+    transition:  0.3s ease, transform 0.3s ease;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .card-service{
+    margin-bottom: 15px;
+  }
+  

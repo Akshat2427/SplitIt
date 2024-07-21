@@ -1,0 +1,101 @@
+.form-container {
+    width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.google-button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.google-button:hover {
+    background-color: #357ae8;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.toggle-button {
+    width: 48%;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-button.active {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+.toggle-button:not(.active) {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.toggle-button:not(.active):hover {
+    background-color: #f0f0f0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form button {
+    background-color: black;
+}
+
+.signup-form button:hover {
+    background-color: #333;
+}
+
+.signin-form button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.signin-form button:hover {
+    background-color: #f0f0f0;
+}
