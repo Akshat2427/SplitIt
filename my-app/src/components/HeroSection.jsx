@@ -10,8 +10,8 @@ function HeroSection() {
     return (
         <LazyLoad height={200} offset={100}>
             <div className='hero-container' id='main'>
-                <h1>Split Expense ? </h1>
-                <p>This is your one stop solution...</p>
+                <h1 style={{textAlign:"center"}}>Split Expense ? </h1>
+                <p style={{textAlign:"center"}}>This is your one stop solution...</p>
                 <div className="hero-btns">
                     <Buttons className="btns" buttonStyle={'btn--outline'} buttonSize={'btn--large'}>
                         <Link to="split-expense" className='q-split' style={{ textDecoration: "none", color: "white" }}>
