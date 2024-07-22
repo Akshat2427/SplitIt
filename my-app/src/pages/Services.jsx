@@ -8,7 +8,7 @@ function Services() {
     return (
         <div className="services-container" id='services' style={{display:"flex" , justifyContent:"space-around" ,  flexWrap:"wrap" , marginTop:"25px" , marginBottom:"20px"}}>
         <div className="card-service">
-<Link to={"/split-expense-full"} style={{textDecoration:"none"}}>             <CardService  content={"Splitting expenses is a practical and efficient way for individuals, groups, or organizations to manage and share financial responsibilities. It involves dividing the cost of shared expenses, such as bills, groceries, travel expenses, or event costs, among multiple parties based on agreed-upon terms."} title={"Split Expenses"} img={"happy-man.jpg"}  />
+<Link to={"/split-expense-full"} style={{textDecoration:"none"}}>             <CardService  content={"Splitting expenses is a practical and efficient way for individuals, groups, or organizations to manage and share financial responsibilities. It involves dividing the cost of shared expenses, such as bills, groceries, travel expenses, or event costs, among multiple parties based on agreed-upon terms."} title={"Split Expenses"} img={"group-4.jpg"}  />
 </Link>
         </div>
        <Link to={"/comming-soon"} style={{textDecoration:"none"}}>
