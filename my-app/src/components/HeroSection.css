@@ -2,7 +2,11 @@
     color: black;
 }
 .hero-container{
-    background: url('group-5.jpg') center center/cover no-repeat;
+
+  background-image: url('group-5.jpg');
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
     height: 100vh;
     
     width: 100%;
