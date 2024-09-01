@@ -23,7 +23,7 @@ function App() {
     < Route path="/edit-room/:id" element={<EditRoom></EditRoom>} />
     < Route path="/comming-soon" element={<PageNotFound></PageNotFound>} />
    </Routes>
-   <ContactUs/>
+   {/* <ContactUs/> */}
    </>
   )
 }

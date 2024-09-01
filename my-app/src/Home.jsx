@@ -9,6 +9,7 @@ import SplitExpense from './pages/SplitExpense';
 import CardService from './components/CardService';
 import Services from './pages/Services';
 import ParallyxHome from './components/ParallyxHome';
+import ContactUs from "./pages/Contact"
 import SideText from './components/SideText';
 import RightSideText from './components/RightSideText';
 function App() {
@@ -23,7 +24,7 @@ function App() {
       <RightSideText></RightSideText>
       {/* <HeroSection id="main" /> */}
       {/* <Services /> */}
-    
+      <ContactUs/>
     </>
   );
 }
