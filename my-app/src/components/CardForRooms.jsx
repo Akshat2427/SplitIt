@@ -11,7 +11,7 @@ const CardForRoom = ({ title, image, info, id }) => {
 
   return (
     <div className="card">
-      <img src="expense-tracker.jpg" alt={title} className="card-image" />
+      <img loading='lazy' src="expense-tracker.jpg" alt={title} className="card-image" />
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
         <ul className="info-list">

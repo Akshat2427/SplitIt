@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Link , useLocation} from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Buttons } from './Buttons';
 import "./NavBar.css";
-import { FirebaseContext } from '../context/firebase'
+import { FirebaseContext } from '../context/firebase';
+import { useEffect } from 'react';
 function NavBar() {
-  const data  = useContext(FirebaseContext);
+  const data = useContext(FirebaseContext);
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [dropdown, setDropdown] = useState(false);
   const location = useLocation();
-  
 
   function closeMobileMenu() {
     setClick(false);
@@ -27,9 +28,13 @@ function NavBar() {
     window.addEventListener('resize', showBtn);
     return () => window.removeEventListener('resize', showBtn);
   }, []);
-console.log("loaction" , location.pathname);
+
+  const toggleDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
   return (
-    <nav className="navbar" style={{marginTop:"0px"}}>
+    <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           SplitIt <i className='fab fa-typo3'></i>
@@ -39,25 +44,54 @@ console.log("loaction" , location.pathname);
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
-            <a href={location.pathname === "/" ? "#main" : "/"} className="nav-links" onClick={closeMobileMenu} >
+            <a href={location.pathname === "/" ? "#main" : "/"} className="nav-links" onClick={closeMobileMenu}>
               Home
             </a>
           </li>
           <li className='nav-item'>
-            <a href={location.pathname === "/" ? "#services" : "/"} className="nav-links" onClick={closeMobileMenu}>
-              Services
+            <a href={location.pathname === "/" ? "#quickSplit" : "/"} className="nav-links" onClick={closeMobileMenu}>
+              Quick Split
             </a>
           </li>
           <li className='nav-item'>
-            {console.log("navbar" , data.loggedIn)}
-            {data.loggedIn ? <><Link to="/" className="nav-links-mobile" onClick={data.signOutUser}>
-             Logout
-            </Link></> : <><Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
-              Signup
-            </Link></>}
+            <a href={location.pathname === "/" ? "#splitExpense" : "/"} className="nav-links" onClick={closeMobileMenu}>
+              Split Expense
+            </a>
           </li>
         </ul>
-        {button && <Buttons buttonStyle={'btn--primary'} buttonSize={'btn--large'} onClick={data.signOutUser}>{data.loggedIn ? "Log Out" : "Sign In"}</Buttons>}
+        {button && 
+        data.user ? 
+        (
+          <div className="navbar-user">
+            <img 
+              src={data?.user?.photoURL || "Group.jpg"} 
+              alt="User Avatar" 
+              className="user-avatar" 
+              onClick={toggleDropdown} 
+              style={{ 
+                width: '50px', 
+                height: '50px', 
+                borderRadius: '50%', 
+                objectFit: 'cover', 
+                cursor: 'pointer' 
+              }} 
+            />
+            {dropdown && (
+              <div className="dropdown-menu">
+                <button className="dropdown-item" onClick={data.signOutUser} >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        )
+      :
+      (
+        <button buttonStyle='btn--outline' className="dropdown-item" style={{width:"7.5vw"}} link='/sign-up'>
+          Sign Up
+        </button>
+      )
+      }
       </div>
     </nav>
   );

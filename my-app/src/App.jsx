@@ -5,14 +5,14 @@ import SignUp from './pages/sign-up'
 import NavBar from './components/NavBar'
 import SplitExpense from './pages/SplitExpense'
 import ContactUs from './pages/Contact'
-import FullSplitExpense from './pages/FullSplitExpense'
+// import FullSplitExpense from './pages/FullSplitExpense'
 import PrevRooms from './pages/PrevRooms'
-import EditRoom from './pages/EditRoom'
+import {EditRoom, FullSplitExpense} from './pages'
 import PageNotFound from './pages/PageNotFound';
 function App() {
   return (
    <>
-    <NavBar />
+  
    
    <Routes>
     < Route path="/" element={<Home></Home>} />
