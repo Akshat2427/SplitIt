@@ -23,7 +23,7 @@ h1.scrolled {
 
 
 .buildings {
-    background-image: url('night2.png'); /* Correct syntax */
+    background-image: url('https://github.com/Akshat2427/SplitIt/blob/main/my-app/public/night2.png'); /* Correct syntax */
     background-size: cover;
     background-position: bottom;
     width: 100%;
