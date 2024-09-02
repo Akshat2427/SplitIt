@@ -16,7 +16,7 @@ SplitIt is a web application designed to help users easily split expenses among 
 
 <h3>Backend</h3> <p>Firebase (Authentication, Firestore)</p>
 
-<h3>Other Libraries</h3> <p>LazyLoad, FontAwesome</p>
+<h3>Other Libraries</h3> <p>Framer-Motion, FontAwesome</p>
 <hr>
 <h1>Prerequisites</h1>
 <h3>Node.js and npm</h3> <p>Installed on your machine.</p>
