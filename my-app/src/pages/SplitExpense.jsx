@@ -166,7 +166,7 @@ function FullSplitExpense() {
           <div className="results" style={{ position: "relative", top: "10px" }}>
             {average > 0 && <h2 className="in-future">Per Person Average is {average.toFixed(2)}</h2>}
             {data.map((e, index) => (
-              <h1 className="in-future" key={index}>{e}</h1>
+              <h1 className="in-future" style={{fontSize:"30px" , fontFamily:"sans-serif"}} key={index}>{e}</h1>
             ))}
           </div>
         )}

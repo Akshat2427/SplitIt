@@ -1,5 +1,7 @@
 /* SplitExpense.css */
-
+h1{
+  font-size: 30px;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -151,4 +153,9 @@
   cursor: pointer;
   margin-bottom: 20px;
   margin-left: 10px;
+}
+@media (max-width: 1200px) {
+  h1 {
+      font-size: 30px;
+  }
 }

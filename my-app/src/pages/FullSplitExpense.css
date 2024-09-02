@@ -1,5 +1,8 @@
 /* SplitExpense.css */
-
+h1{
+  font-size: 30px;
+  font-family: sans-serif;
+}
 .container {
     display: flex;
     flex-direction: column;
