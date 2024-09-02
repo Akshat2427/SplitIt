@@ -35,6 +35,7 @@ const childTextVariants = {
 const RightSideText = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { triggerOnce: true, margin: '0px 0px -50% 0px' });
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <div className='hero' id='splitExpense' >
@@ -42,23 +43,35 @@ const RightSideText = () => {
         <img style={{ height: "100vh" }} src="/rpt2.png" alt="Hero" />
       </div>
       <div className="wrapper">
-        <motion.div
-          className="textContainer"
-          ref={ref}
-          variants={textVariants}
-          initial="initial"
-          animate={isInView ? "animate" : "initial"}
-        >
-          <motion.h1 variants={childTextVariants} style={{ fontSize: "85px" }}>Split Expense on Vacation</motion.h1>
-          {/* <motion.h1 variants={childTextVariants} style={{ marginTop: "-10px" }}>Use our Expense Tracker</motion.h1> */}
-          <motion.div className="cardContainer" variants={childTextVariants}>
-            <motion.div className="card">
-              <Link to="/split-expense-full" className='q-split'>
-                Expense Tracker
-              </Link>
+        {!isMobile ? (
+          <motion.div
+            className="textContainer"
+            ref={ref}
+            variants={textVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+          >
+            <motion.h1 variants={childTextVariants} style={{ fontSize: "85px" }}>Split Expense on Vacation</motion.h1>
+            <motion.div className="cardContainer" variants={childTextVariants}>
+              <motion.div className="card">
+                <Link to="/split-expense-full" className='q-split'>
+                  Expense Tracker
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
-        </motion.div>
+        ) : (
+          <div className="textContainer">
+            <h1 style={{ fontSize: "85px" }}>Split Expense on Vacation</h1>
+            <div className="cardContainer">
+              <div className="card">
+                <Link to="/split-expense-full" className='q-split'>
+                  Expense Tracker
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

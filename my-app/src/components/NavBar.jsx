@@ -53,9 +53,15 @@ function NavBar() {
               Quick Split
             </a>
           </li>
+         
           <li className='nav-item'>
             <a href={location.pathname === "/" ? "#splitExpense" : "/"} className="nav-links" onClick={closeMobileMenu}>
               Split Expense
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a href={location.pathname === "/" ? "/sign-up" : "/"} id='sgn-up' className="nav-links" onClick={closeMobileMenu}>
+              Sign Up
             </a>
           </li>
         </ul>
@@ -87,9 +93,11 @@ function NavBar() {
         )
       :
       (
-        <button buttonStyle='btn--outline' className="dropdown-item" style={{width:"7.5vw"}} link='/sign-up'>
+        <button  className="dropdown-item" style={{ width: "7.5vw" }}>
+        <Link to='/sign-up' className="signup-link"  style={{ textDecoration: 'none', color: 'inherit' }}>
           Sign Up
-        </button>
+        </Link>
+      </button>
       )
       }
       </div>

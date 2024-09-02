@@ -31,7 +31,7 @@ function ParallyxHome() {
     }, []);
     return (
         <div ref={ref} className='parallax' style={{ background: "linear-gradient(180deg, #111132, #0c0c1d)", position: "relative" }}>
-            <motion.h1  className={isScrolled ? 'scrolled' : ''} style={{ y: yText, position: "relative", left: "-33px" }}>
+            <motion.h1  className={isScrolled ? 'scrolled' : ''} style={{ y: yText, position: "relative", }}>
                 SPLIT IT
                 <br />
           

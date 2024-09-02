@@ -12,7 +12,9 @@
   transition: background 0.3s ease, box-shadow 0.3s ease; /* Added smooth transition for shadow */
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); Subtle shadow for depth */
 }
-
+#sgn-up{
+  visibility: hidden;
+}
 .navbar-container {
   display: flex;
   justify-content: space-between; /* Adjusted to space elements evenly */
@@ -56,7 +58,6 @@
 }
 
 .nav-links {
- 
   color: #fff;
   display: flex;
   align-items: center;
@@ -65,6 +66,12 @@
   height: 100%;
   transition: all 0.3s ease; /* Smooth transition on hover */
 }
+
+.nav-links:hover {
+  color: #e926f7; /* Modern hover color */
+  border-bottom: 4px solid #e926f7; /* Added color to the underline */
+}
+
 .navbar-user {
   position: relative;
 }
@@ -99,95 +106,104 @@
   background-color: #b327c3;
 }
 
-.nav-links:hover {
-  color: #e926f7; /* Modern hover color */
-  border-bottom: 4px solid #e926f7; /* Added color to the underline */
-  transition: all 0.3s ease;
+.menu-icon {
+  display: none;
 }
 
-.menu-icon {
+/* Only display signup button on mobile screens */
+.signup-btn {
   display: none;
 }
 
 @media screen and (max-width: 960px) {
   .navbar {
-      background: rgba(0, 0, 0, 0.9); /* Darker background for mobile */
+    background: rgba(0, 0, 0, 0.9); /* Darker background for mobile */
   }
 
   .nav-menu {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      height: 100vh; /* Full-screen menu on mobile */
-      position: absolute;
-      top: 80px;
-      left: -100%;
-      opacity: 0;
-      transition: all 0.5s ease;
-      background: rgba(0, 0, 0, 0.95); /* Darker background for visibility */
-      z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Full-screen menu on mobile */
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    background: rgba(0, 0, 0, 0.95); /* Darker background for visibility */
+    z-index: 1;
   }
 
   .nav-menu.active {
-      left: 0;
-      opacity: 1;
-      transition: all 0.5s ease;
+    left: 0;
+    opacity: 1;
   }
 
   .nav-links {
-      padding: 1.5rem 0; /* Adjusted padding for mobile */
-      width: 100%;
-      text-align: center;
+    padding: 1.5rem 0; /* Adjusted padding for mobile */
+    width: 100%;
+    text-align: center;
   }
 
   .nav-links:hover {
-      background-color: #00bcd4; /* Matching hover color */
-      color: #fff;
-      border-radius: 0;
+    background-color: #00bcd4; /* Matching hover color */
+    color: #fff;
+    border-radius: 0;
   }
 
   .navbar-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
   }
-  .nav-links-mobile{
-    visibility: hidden;
-  }
+
   .menu-icon {
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      cursor: pointer;
-      color: #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
   }
 
   .fa-times {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .nav-links-mobile {
-      display: block;
-      text-align: center;
-      margin: 2rem auto;
-      border-radius: 4px;
-      width: 80%;
-      text-decoration: none;
-      font-size: 1.5rem;
-      background-color: transparent;
-      color: #fff;
-      padding: 14px 20px;
-      border: 2px solid #00bcd4; /* More modern border style */
-      transition: all 0.3s ease-out;
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: #fff;
+    padding: 14px 20px;
+    border: 2px solid #00bcd4; /* More modern border style */
+    transition: all 0.3s ease-out;
   }
 
   .nav-links-mobile:hover {
-      background: #00bcd4; /* Matching hover color */
-      color: #fff;
+    background: #00bcd4; /* Matching hover color */
+    color: #fff;
+  }
+
+  /* Hide dropdown on mobile screens */
+  .dropdown-item {
+    visibility: hidden;
+  }
+  #sgn-up{
+    visibility: visible;
+  }
+
+  /* Display signup button on mobile screens */
+  .signup-btn {
+    display: block;
   }
 }
